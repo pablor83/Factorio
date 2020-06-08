@@ -1,4 +1,4 @@
-package faktorio.project;
+package com.project.window;
 
 /**
  * Hello world!

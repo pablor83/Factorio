@@ -1,4 +1,4 @@
-package faktorio.project;
+package com.project.window;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
