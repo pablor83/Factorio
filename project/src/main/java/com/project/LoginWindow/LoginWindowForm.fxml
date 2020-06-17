@@ -14,16 +14,16 @@
 	fx:controller="com.project.LoginWindow.LoginWindowController"
 	alignment="top_center" hgap="0" vgap="5">
 
-	<Label GridPane.rowIndex="2" GridPane.columnIndex="0"
+	<Label  GridPane.rowIndex="2" GridPane.columnIndex="0"
 		text="Nazwa użytkownika" prefWidth="120" />
 	<Label GridPane.rowIndex="3" GridPane.columnIndex="0"
 		text="Hasło" />
-	<TextField GridPane.rowIndex="2" GridPane.columnIndex="1" />
-	<PasswordField GridPane.rowIndex="3"
+	<TextField fx:id = "userName" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+	<PasswordField fx:id = "userPass" GridPane.rowIndex="3"
 		GridPane.columnIndex="1" />
 	<HBox GridPane.rowIndex="6" GridPane.columnIndex="1" spacing="20">
 		<Button text="OK" prefWidth="70" />
-		<Button text="Anuluj" prefWidth="70" onAction="#cancelButton" />
+		<Button text="Anuluj" prefWidth="70" onAction="#cancelButtonClick" />
 	</HBox>
 	<Separator GridPane.rowIndex="5" GridPane.columnIndex="1"/>
 	<Separator GridPane.rowIndex="5" GridPane.columnIndex="0"/>
