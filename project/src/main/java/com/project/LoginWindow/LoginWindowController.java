@@ -15,24 +15,19 @@ import javafx.stage.Stage;
 
 public class LoginWindowController {
 
-	Stage loginStage;
-
+	private Stage loginStage;
 	
-	@SuppressWarnings("exports")
 	@FXML
-	public TextField userNameField;
+	private TextField userNameField;
+	
+	@FXML
+	private  PasswordField userPassField;
 
-	@SuppressWarnings("exports")
 	@FXML
-	public PasswordField userPassField;
+	private  Button okButton;
 
-	@SuppressWarnings("exports")
 	@FXML
-	public Button okButton;
-
-	@SuppressWarnings("exports")
-	@FXML
-	public Button canceButton;
+	private  Button canceButton;
 
 	public void initializeLoginPage() throws Exception {
 		loginStage = new Stage();
@@ -46,12 +41,12 @@ public class LoginWindowController {
 	}
 
 	@FXML
-	public void cancelButtonClick() {
+	private void cancelButtonClick() {
 		Platform.exit();
 	}
 
 	@FXML
-	public void OkButtonClick() throws Exception {
+	private void OkButtonClick() throws Exception {
 		String user = userNameField.getText();
 		String pass = userPassField.getText();
 		UserVerification verification = new	UserVerification("PATH");

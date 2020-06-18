@@ -6,6 +6,8 @@ module JavaFX {
 	requires javafx.base;
 	requires javafx.graphics;
 	requires java.sql;
-
+	opens com.project.LoginWindow to javafx.fxml;
+	
+	
    
 }
