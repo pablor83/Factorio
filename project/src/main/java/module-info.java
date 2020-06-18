@@ -5,6 +5,7 @@ module JavaFX {
     requires javafx.controls;
 	requires javafx.base;
 	requires javafx.graphics;
+	requires java.sql;
 
    
 }
