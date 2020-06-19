@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.project.window.conf.ReadDataConf;
+
 public class UserVerification {
 
 	private String connectionURL;
