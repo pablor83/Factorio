@@ -18,7 +18,7 @@ public class UserVerification {
 		this.connectionURL = connectionURL;
 	}
 
-	public boolean isDataLoginCorrect(String user, String password) {
+	public int isDataLoginCorrect(String user, String password) {
 
 		ResultSet resultSet;
 		String userFromDB = null;
@@ -38,12 +38,13 @@ public class UserVerification {
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.printStackTrace();
+			return 0;
 		}
 
 		if (userFromDB != null && userFromDB.equals(user) && passwordFromDB.equals(password))
-			return true;
+			return 2;
 
-		return false;
+		return 1;
 	}
 }
