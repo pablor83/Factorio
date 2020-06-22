@@ -53,7 +53,6 @@ public class LoginWindowController {
 		String pass = userPassField.getText();
 		UserVerification verification = new UserVerification();
 		int IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user, pass);
-	
 		if (IsCorrectPaswordAndUser == 0) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Błąd");
