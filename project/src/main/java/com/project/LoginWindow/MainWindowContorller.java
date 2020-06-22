@@ -17,6 +17,7 @@ public class MainWindowContorller {
 		mainStage.setScene(new Scene(root, 400, 500));
 		mainStage.getOnCloseRequest();
 		mainStage.show();
+		
 	}
 	
 	

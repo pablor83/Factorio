@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -16,18 +17,19 @@ import javafx.stage.Stage;
 public class LoginWindowController {
 
 	private Stage loginStage;
-	
+
+
 	@FXML
 	private TextField userNameField;
-	
-	@FXML
-	private  PasswordField userPassField;
 
 	@FXML
-	private  Button okButton;
+	private PasswordField userPassField;
 
 	@FXML
-	private  Button canceButton;
+	private Button okButton;
+
+	@FXML
+	private Button canceButton;
 
 	public void initializeLoginPage() throws Exception {
 		loginStage = new Stage();
@@ -49,21 +51,32 @@ public class LoginWindowController {
 	private void OkButtonClick() throws Exception {
 		String user = userNameField.getText();
 		String pass = userPassField.getText();
-		UserVerification verification = new	UserVerification("PATH");
-		boolean IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user,	pass);
-		if (IsCorrectPaswordAndUser) {
+		UserVerification verification = new UserVerification();
+//		int IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user, pass);
+		int IsCorrectPaswordAndUser = 0;
+		if (IsCorrectPaswordAndUser == 0) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Błąd");
+			alert.setHeaderText(null);
+			alert.setContentText("Bład połaczenia z bazą danych!");
+			alert.showAndWait();
+		} else if (IsCorrectPaswordAndUser == 1) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Błąd");
+			alert.setHeaderText(null);
+			alert.setContentText("Niepoprawna nazwa użytkownika lub niewłaściwe hasło!");
+			alert.showAndWait();
+			
+		} else if (IsCorrectPaswordAndUser == 2) {
+
 			Stage stage = (Stage) okButton.getScene().getWindow();
 			stage.close();
 			MainWindowContorller mainWindowContorller = new MainWindowContorller();
 			mainWindowContorller.initializeMainWindow();
-		} else {
-			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setTitle("Błąd");
-			alert.setHeaderText("Niepoprawna nazwa użytkownika lub niewłaściwe hasło!");
-			alert.showAndWait();
-			
 		}
 
 	}
+
+
 
 }
