@@ -12,9 +12,11 @@ module JavaFX {
 	
 	
 	
-	opens com.project.LoginWindow to javafx.fxml;
 	
+	
+	opens com.project.LoginWindow to javafx.fxml;
 	
 	
    
 }
+
