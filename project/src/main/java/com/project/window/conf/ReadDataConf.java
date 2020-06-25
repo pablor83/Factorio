@@ -5,11 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ReadDataConf {
 
-	private String[] dataTab;
+	private Map<String, String> mapPath;
 
 	public void readConf() {
 		Path path = Paths.get("../conf.ini");
@@ -21,26 +22,37 @@ public class ReadDataConf {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		mapPath = list
+				.stream()
+				.map(this::getSplitDataTab)
+				.collect(Collectors.toMap(key -> key[0], value -> value[1], (duplicateKey1, duplicateKey2) -> {
+					return duplicateKey1;
+				}));
+	}
 
-		dataTab = list.stream().flatMap(word -> Stream.of(word.split("=|;"))).toArray(String[]::new);
+	private String[] getSplitDataTab(String dataToSplit) {
+		String[] splitTable = dataToSplit.split("=|;");
+		splitTable[0] = splitTable[0].toLowerCase();
+		return splitTable;
 	}
 
 	public String getPathToDatabse() {
 
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder
-		.append(dataTab[1])
+		.append(mapPath.get("driver"))
 		.append(":")
-		.append(dataTab[3])
+		.append(mapPath.get("serverinstance"))
 		.append("://")
-		.append(dataTab[5])
+		.append(mapPath.get("host"))
 		.append(":")				
-		.append(dataTab[7])
+		.append(mapPath.get("port"))
 		.append(";databaseName=")
-		.append(dataTab[9])
+		.append(mapPath.get("databasename"))
 		.append(";user=")
-		.append(dataTab[11])		
-		.append(";password=").append(dataTab[13]);
+		.append(mapPath.get("user"))		
+		.append(";password=")
+		.append(mapPath.get("password"));
 
 		return stringBuilder.toString();
 	}
