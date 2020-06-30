@@ -12,7 +12,7 @@ public class UserVerification {
 
 	private String connectionURL;
 
-	private UserVerification() {
+	public UserVerification() {
 
 	}
 
