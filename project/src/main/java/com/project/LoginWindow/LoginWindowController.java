@@ -1,5 +1,6 @@
 package com.project.LoginWindow;
 
+import com.project.window.conf.ReadDataConf;
 import com.project.window.verification.UserVerification;
 
 import javafx.application.Platform;
@@ -51,8 +52,11 @@ public class LoginWindowController {
 	private void OkButtonClick() throws Exception {
 		String user = userNameField.getText();
 		String pass = userPassField.getText();
-		UserVerification verification = new UserVerification();
-		int IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user, pass);
+		ReadDataConf readConf = new ReadDataConf();
+		
+//		UserVerification verification = new UserVerification(readConf.getPathToDatabase());
+//		int IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user, pass);
+		int IsCorrectPaswordAndUser= 2;
 		if (IsCorrectPaswordAndUser == 0) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Błąd");

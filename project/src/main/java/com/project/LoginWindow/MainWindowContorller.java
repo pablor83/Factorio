@@ -14,7 +14,7 @@ public class MainWindowContorller {
 		mainStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("MainWindowForm.fxml"));
 		mainStage.setTitle("Faktorio");
-		mainStage.setScene(new Scene(root, 400, 500));
+		mainStage.setScene(new Scene(root, 1200, 900));
 		mainStage.getOnCloseRequest();
 		mainStage.show();
 		
