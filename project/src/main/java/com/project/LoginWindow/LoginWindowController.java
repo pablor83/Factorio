@@ -53,10 +53,11 @@ public class LoginWindowController {
 		String user = userNameField.getText();
 		String pass = userPassField.getText();
 		ReadDataConf readConf = new ReadDataConf();
-		
-//		UserVerification verification = new UserVerification(readConf.getPathToDatabase());
-//		int IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user, pass);
-		int IsCorrectPaswordAndUser= 2;
+		readConf.readConf();
+		UserVerification verification = new UserVerification(readConf.getPathToDatabase());
+		int IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user, pass);
+		System.out.println(IsCorrectPaswordAndUser);
+		System.out.println(readConf.getPathToDatabase());
 		if (IsCorrectPaswordAndUser == 0) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Błąd");

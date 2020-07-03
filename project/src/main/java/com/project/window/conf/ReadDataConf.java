@@ -54,7 +54,7 @@ public class ReadDataConf {
 		.append(mapPath.get("serverinstance"))
 		.append("://")
 		.append(mapPath.get("host"))
-		.append(":")				
+		.append(":")					
 		.append(mapPath.get("port"))
 		.append(";databaseName=")
 		.append(mapPath.get("databasename"))
