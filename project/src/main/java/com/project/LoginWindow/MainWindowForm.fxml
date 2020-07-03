@@ -23,9 +23,9 @@
                      <children>
                         <ToolBar layoutX="7.0" layoutY="8.0" prefHeight="75.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <items>
-                            <Button contentDisplay="TOP" mnemonicParsing="false" text="Nowy" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Edycja" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Usuń" textOverrun="WORD_ELLIPSIS" />
+                            <Button mnemonicParsing="false" text="Nowy" textAlignment="CENTER" textOverrun="CLIP" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Edycja" textAlignment="CENTER" textOverrun="CLIP" />
+                              <Button alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Usuń" textAlignment="CENTER" textOverrun="CLIP" />
                           </items>
                         </ToolBar>
                      </children>
