@@ -43,7 +43,7 @@ public class ReadDataConf {
 		return splitTable;
 	}
 
-	public String getPathToDatabase() {
+	public String getPathToDataBase() {
 
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder
