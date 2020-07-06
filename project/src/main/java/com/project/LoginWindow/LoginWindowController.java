@@ -63,8 +63,6 @@ public class LoginWindowController {
 		readConf.readConf();
 		UserVerification verification = new UserVerification(readConf.getPathToDataBase());
 		int IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user, pass);
-		System.out.println(IsCorrectPaswordAndUser);
-		System.out.println(readConf.getPathToDataBase());
 		if (IsCorrectPaswordAndUser == 0) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Błąd");
