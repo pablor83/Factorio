@@ -41,12 +41,12 @@ public class UserVerification {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
-			return 0;
+			return 1;
 		}
 
 		if (userFromDB != null && userFromDB.equals(user) && passwordFromDB.equals(password))
 			return 2;
 
-		return 1;
+		return 0;
 	}
 }
