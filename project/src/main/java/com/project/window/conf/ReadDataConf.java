@@ -35,8 +35,6 @@ public class ReadDataConf {
 			e.printStackTrace();
 			readStatus = 2;
 		}
-		
-		readStatus = 3;
 	}
 
 	private String[] getSplitDataTab(String dataToSplit) {
@@ -45,13 +43,11 @@ public class ReadDataConf {
 		return splitTable;
 	}
 
-	public String getPathToDatabase() {
+	public String getPathToDataBase() {
 
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder
 		.append(mapPath.get("driver"))
-		.append(":")
-		.append(mapPath.get("serverinstance"))
 		.append("://")
 		.append(mapPath.get("host"))
 		.append(":")					
