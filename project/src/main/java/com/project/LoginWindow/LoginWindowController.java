@@ -1,5 +1,8 @@
 package com.project.LoginWindow;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import com.project.window.conf.ReadDataConf;
 import com.project.window.verification.UserVerification;
 
@@ -10,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -18,6 +22,7 @@ import javafx.stage.Stage;
 public class LoginWindowController {
 
 	private Stage loginStage;
+	private  Image programLogo = new Image("/programLogo.png");
 
 
 	@FXML
@@ -36,6 +41,8 @@ public class LoginWindowController {
 		loginStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("LoginWindowForm.fxml"));
 		loginStage.setTitle("Logowanie użytkownika");
+		
+		loginStage.getIcons().add(programLogo);
 		loginStage.setScene(new Scene(root, 300, 120));
 		loginStage.setResizable(false);
 		loginStage.centerOnScreen();
@@ -54,21 +61,21 @@ public class LoginWindowController {
 		String pass = userPassField.getText();
 		ReadDataConf readConf = new ReadDataConf();
 		readConf.readConf();
-		UserVerification verification = new UserVerification(readConf.getPathToDatabase());
+		UserVerification verification = new UserVerification(readConf.getPathToDataBase());
 		int IsCorrectPaswordAndUser = verification.isDataLoginCorrect(user, pass);
 		System.out.println(IsCorrectPaswordAndUser);
-		System.out.println(readConf.getPathToDatabase());
+		System.out.println(readConf.getPathToDataBase());
 		if (IsCorrectPaswordAndUser == 0) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Błąd");
 			alert.setHeaderText(null);
-			alert.setContentText("Bład połaczenia z bazą danych!");
+			alert.setContentText("Niepoprawna nazwa użytkownika lub niewłaściwe hasło!");
 			alert.showAndWait();
 		} else if (IsCorrectPaswordAndUser == 1) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Błąd");
 			alert.setHeaderText(null);
-			alert.setContentText("Niepoprawna nazwa użytkownika lub niewłaściwe hasło!");
+			alert.setContentText("Bład połaczenia z bazą danych!");
 			alert.showAndWait();
 			
 		} else if (IsCorrectPaswordAndUser == 2) {

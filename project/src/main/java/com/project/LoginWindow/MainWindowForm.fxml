@@ -32,15 +32,15 @@
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="590.0">
                      <children>
-                        <TableView layoutX="24.0" layoutY="83.0" prefHeight="386.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="clientData" layoutX="24.0" layoutY="83.0" prefHeight="386.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="297.0" text="Imie" />
-                            <TableColumn prefWidth="291.0" text="Nazwisko" />
-                              <TableColumn prefWidth="291.0" text="Adres" />
-                              <TableColumn prefWidth="291.0" text="NIP" />
-                              <TableColumn prefWidth="291.0" text="PESEL" />
-                              <TableColumn prefWidth="291.0" text="Telefon" />
-                              <TableColumn prefWidth="291.0" text="Uwagi" />
+                            <TableColumn prefWidth="297.0" text="Imie" fx:id="firstName" />
+                            <TableColumn prefWidth="291.0" text="Nazwisko" fx:id="lastName" />
+                              <TableColumn prefWidth="291.0" text="Adres" fx:id="adress" />
+                              <TableColumn prefWidth="291.0" text="NIP" fx:id="nip"/>
+                              <TableColumn prefWidth="291.0" text="PESEL" fx:id="pesel"/>
+                              <TableColumn prefWidth="291.0" text="Telefon" fx:id="phoneNumber"/>
+                              <TableColumn prefWidth="291.0" text="Uwagi" fx:id="comments"/>
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
