@@ -1,8 +1,5 @@
 package com.project.LoginWindow;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import com.project.window.conf.ReadDataConf;
 import com.project.window.verification.UserVerification;
 
@@ -13,16 +10,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.image.Image;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class LoginWindowController {
 
 	private Stage loginStage;
-	private  Image programLogo = new Image("/programLogo.png");
+	
 
 
 	@FXML
@@ -41,8 +38,7 @@ public class LoginWindowController {
 		loginStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("LoginWindowForm.fxml"));
 		loginStage.setTitle("Logowanie użytkownika");
-		
-		loginStage.getIcons().add(programLogo);
+		loginStage.initStyle(StageStyle.UTILITY);
 		loginStage.setScene(new Scene(root, 300, 120));
 		loginStage.setResizable(false);
 		loginStage.centerOnScreen();

@@ -52,6 +52,7 @@ public class MainWindowContorller {
 		mainStage.setTitle("Faktorio");
 		mainStage.getIcons().add(programLogo);
 		mainStage.setScene(new Scene(root, 1200, 900));
+		
 		mainStage.getOnCloseRequest();
 		mainStage.show();
 		
