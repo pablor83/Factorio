@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="456.0" prefWidth="590.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="456.0" prefWidth="590.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
     <Tab closable="false" text="Kontrahent">
   
